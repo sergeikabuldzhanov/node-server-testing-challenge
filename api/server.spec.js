@@ -40,15 +40,17 @@ describe("server.js module", () => {
           })
           .expect(201);
       });
-      it("returns 1 on valid request", () => {
+      it("returns new user object on valid request", () => {
         return request(server)
           .post("/users")
           .send({
             username: "Saruman",
             password: "It's too late!"
           })
-          .expect(response => {
-            response.body = 1;
+          .expect({
+            username: "Saruman",
+            password: "It's too late!",
+            id: 4
           });
       });
     });
