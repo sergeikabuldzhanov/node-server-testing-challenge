@@ -1,5 +1,7 @@
 # Mac cruft
 .DS_Store
+.vscode
+.eslintrc.js
 
 # Logs
 logs
